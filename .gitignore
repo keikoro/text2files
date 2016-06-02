@@ -1,0 +1,11 @@
+# Mac
+.DS_Store
+
+# Files - general
+**.log**
+**.txt**
+**.cache**
+**config**
+!**template**
+**test**
+**foo**
