@@ -34,7 +34,7 @@ fi
 echo "Reading $fname ..."
 while read line || [ -n "$line" ]
 do
-    if [ "$line" != "" ]; then
+    if [ "$line" != "" ] && [[ "$line" != \#* ]] &&  [[ "$line" != \-* ]]; then
         newfile="$outputdir/$line"
         if [ -f "$newfile" ]; then
             echo "FILE ALREADY EXISTS: $newfile – skipping"
