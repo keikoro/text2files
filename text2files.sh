@@ -8,7 +8,7 @@ helptext="You need to provide the name of a file
         \nshould be turned into (empty) file names line by line.
         \nUsage: sh text2files.sh FILE [OUTPUTDIR]"
 
-if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+if [ "$1" == "-h" ] || [ "$1" == "--help" ] || [ "$1" == "" ]; then
     echo $helptext
     exit
 else
