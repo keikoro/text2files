@@ -16,10 +16,10 @@ else
 fi
 
 echo "Reading $1..."
-while read line
+while read line || [ -n "$line" ]
 do
     if [ "$line" != "" ]; then
-        if [ -f $line ]; then
+        if [ -f "$line" ]; then
             echo "FILE ALREADY EXISTS: $line – skipping"
         else
             echo "creating file $line"
