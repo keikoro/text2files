@@ -15,15 +15,18 @@ else
    fname=$1
 fi
 
-echo "Reading $1..."
+outputdir=$(dirname $fname)
+
+echo "Reading $fname ..."
 while read line || [ -n "$line" ]
 do
     if [ "$line" != "" ]; then
-        if [ -f "$line" ]; then
-            echo "FILE ALREADY EXISTS: $line – skipping"
+        newfile="$outputdir/$line"
+        if [ -f "$newfile" ]; then
+            echo "FILE ALREADY EXISTS: $newfile – skipping"
         else
-            echo "creating file $line"
-           touch "$line"
+            echo "creating file $newfile"
+            touch "$newfile"
         fi
     fi
 done < $fname
